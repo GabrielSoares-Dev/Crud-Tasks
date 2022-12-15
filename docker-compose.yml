@@ -26,6 +26,13 @@ services:
    command: mysqld --default-authentication-plugin=mysql_native_password
    volumes:
       - ./docker/mysql-data:/var/lib/mysql:rw
+  redis:
+      image: redis:latest
+      restart: always
+      ports:
+        - "6379:6379"
+      volumes:
+        - ./docker/redis-data:/data:rw
  
 
 
