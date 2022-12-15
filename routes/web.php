@@ -19,3 +19,5 @@ $router->get('/', function () use ($router) {
         'version' => $router->app->version(),
     ]);
 });
+
+$router->post('/tasks', 'ExampleController@createTask');

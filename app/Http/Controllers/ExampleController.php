@@ -2,16 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tasks;
+
 class ExampleController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private $modelTasks;
+    public function __construct(Tasks $tasks)
     {
-        //
+        $this->modelTasks = $tasks;
+    }
+
+
+    public function createTask()
+    {
+
+        $data = [
+            'title' => 'Task 1',
+            'description' => 'Description 1',
+        ];
+        $this->modelTasks->create($data);
+
+        return response()->json([
+            'message' => 'Task created successfully',
+            'data' => $data
+        ], 201);
     }
 
     //

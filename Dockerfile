@@ -1,10 +1,20 @@
 FROM php:7.4-fpm-alpine
 
-WORKDIR /var/www/html
+RUN docker-php-ext-install pdo_mysql
 
-ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
+WORKDIR /var/www/html/
 
-RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions pdo pdo_mysql gd zip exif
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql exif
+
+COPY . .
+
+RUN composer install
+
+RUN php artisan cache:clear
+
+
+
+
+
+
