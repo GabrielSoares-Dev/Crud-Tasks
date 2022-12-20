@@ -23,7 +23,7 @@ class ExampleController extends Controller
         $this->modelTasks->create($data);
 
         return response()->json([
-            'message' => 'Task created successfully',
+            'message' => 'Task created successfull',
             'data' => $data
         ], 201);
     }
