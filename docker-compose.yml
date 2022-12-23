@@ -26,7 +26,3 @@ services:
    command: mysqld --default-authentication-plugin=mysql_native_password
    volumes:
       - ./docker/mysql-data:/var/lib/mysql:rw
-
-
-
-

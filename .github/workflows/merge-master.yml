@@ -1,0 +1,18 @@
+name: MERGE - MASTER
+on:
+ workflow_dispatch:
+ push:
+        branches:
+         - master
+         - development
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@master
+       - name: Merge development -> master
+         uses: devmasx/merge-branch@master
+         with:
+          type: now
+          from_branch: development
+          target_branch: master
