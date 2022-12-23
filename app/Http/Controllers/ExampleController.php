@@ -28,5 +28,5 @@ class ExampleController extends Controller
         ], 201);
     }
 
-    //
+
 }

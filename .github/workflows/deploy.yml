@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - master
-
-jobs:
-  build:
+ jobs:
+   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositorio

@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  lumen:
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor/
+    build: .
+    # Create network for connection other microservices
+    networks:
+      - test2-network
+
+    command: php -S lumen:8000 -t public
+    restart: always
+
+networks:
+  mysql:
+    driver:
+     bridge
