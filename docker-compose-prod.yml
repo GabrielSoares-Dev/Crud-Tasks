@@ -10,7 +10,7 @@ services:
     build: .
 
     networks:
-      - test
+      - test - network
 
     command: php -S lumen:8000 -t public
     restart: always
