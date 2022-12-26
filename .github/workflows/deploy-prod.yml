@@ -8,9 +8,6 @@ jobs:
    build:
     runs-on: ubuntu-latest
     steps:
-     ## Criar env
-      - name: Criando env
-        run: cat ../../env-production > .env && ls -Al
       - name: Checkout do repositorio
         uses: actions/checkout@v1
       - name: Deploy para o host
