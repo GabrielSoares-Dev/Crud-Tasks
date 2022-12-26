@@ -8,9 +8,9 @@ services:
       - .:/var/www/html
       - /var/www/html/vendor/
     build: .
-    # Create network for connection other microservices
+
     networks:
-      - lumen-network
+      - test
 
     command: php -S lumen:8000 -t public
     restart: always
