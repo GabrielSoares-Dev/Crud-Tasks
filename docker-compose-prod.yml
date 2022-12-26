@@ -19,5 +19,4 @@ networks:
     driver:
      bridge
   lumen-test:
-    external:
      name: lumen-test
