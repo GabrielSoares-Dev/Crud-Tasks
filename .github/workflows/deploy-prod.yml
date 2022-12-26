@@ -10,7 +10,7 @@ jobs:
     steps:
      ## Criar env
       - name: Criando env
-        run: cat composer.json
+        run: ls
       - name: Checkout do repositorio
         uses: actions/checkout@v1
       - name: Deploy para o host
