@@ -8,9 +8,8 @@ services:
       - .:/var/www/html
       - /var/www/html/vendor/
     build: .
-
     networks:
-      - test - network
+      - lumen-test
 
     command: php -S lumen:8000 -t public
     restart: always
@@ -19,3 +18,6 @@ networks:
   mysql:
     driver:
      bridge
+  lumen-test:
+    external:
+     name: lumen-test
