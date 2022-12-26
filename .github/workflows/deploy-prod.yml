@@ -1,9 +1,10 @@
-name: Test CI
+name: DEPLOY - PROD
 on:
-  push:
-    branches:
+ workflow_dispatch:
+ push:
+  branches:
       - master
- jobs:
+jobs:
    build:
     runs-on: ubuntu-latest
     steps:

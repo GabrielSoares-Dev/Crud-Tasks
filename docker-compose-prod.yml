@@ -10,7 +10,7 @@ services:
     build: .
     # Create network for connection other microservices
     networks:
-      - test2-network
+      - lumen-network
 
     command: php -S lumen:8000 -t public
     restart: always
