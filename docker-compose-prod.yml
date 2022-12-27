@@ -4,9 +4,7 @@ services:
   lumen:
     ports:
       - "8000:8000"
-    volumes:
-      - .:/var/www/html
-      - /var/www/html/vendor/
+
     build: .
     networks:
       - lumen-test
