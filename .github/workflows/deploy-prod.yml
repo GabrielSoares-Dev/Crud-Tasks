@@ -24,4 +24,4 @@ jobs:
       - name: Check running containers
         run: docker ps
       - name: Start containers
-        run: docker-compose -f "docker-compose-prod.yml" up -d --build
+        run: docker-compose -f docker-compose-prod.yml up -d --build
