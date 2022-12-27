@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v1
       - name: Deploy para o host
         uses: easingthemes/ssh-deploy@main
-
+      - name: Start containers
+        run: docker-compose -f "docker-compose-prod.yml" up -d --build
         env:
           SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
           ARGS: "-rltgoDzvO --delete"
