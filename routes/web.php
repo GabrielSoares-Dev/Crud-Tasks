@@ -15,7 +15,7 @@
 
 $router->get('/', function () use ($router) {
     return response()->json([
-        'message' => 'oi',
+        'message' => 'doido',
         'version' => $router->app->version(),
     ]);
 });
