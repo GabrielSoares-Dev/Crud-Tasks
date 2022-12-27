@@ -10,16 +10,6 @@ jobs:
     steps:
       - name: Checkout do repositorio
         uses: actions/checkout@v1
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v2.3.0
-        with:
-          # Contexto onde está o arquivo Dockerfile, normalmente é .
-          context: ./
-          file: Dockerfile
-          tags: lumen
-          no-cache: true
-          push: true
-
       - name: Deploy para o host
         uses: easingthemes/ssh-deploy@main
 
@@ -31,7 +21,7 @@ jobs:
           REMOTE_USER: ${{secrets.REMOTE_USER}}
           REMOTE_PORT: ${{secrets.REMOTE_PORT}}
           TARGET: ${{secrets.REMOTE_TARGET}}
-      # - name: Check running containers
-      #   run: docker ps
-      # - name: Start containers
-      #   run: docker-compose -f "docker-compose-prod.yml" up -d --build
+      - name: Check running containers
+        run: docker ps
+      - name: Start containers
+        run: docker-compose -f "docker-compose-prod.yml" up -d --build
