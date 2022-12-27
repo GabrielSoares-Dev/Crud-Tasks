@@ -31,7 +31,4 @@ jobs:
           REMOTE_USER: ${{secrets.REMOTE_USER}}
           REMOTE_PORT: ${{secrets.REMOTE_PORT}}
           TARGET: ${{secrets.REMOTE_TARGET}}
-      # - name: Check running containers
-      #   run: docker ps
-      # - name: Start containers
-      #   run: docker-compose -f "docker-compose-prod.yml" up -d --build
+ 
