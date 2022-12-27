@@ -13,6 +13,8 @@ RUN composer install
 
 RUN php artisan cache:clear
 
+RUN 
+
 
 
 
