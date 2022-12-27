@@ -15,7 +15,7 @@
 
 $router->get('/', function () use ($router) {
     return response()->json([
-        'message' => 'Welcome to the API',
+        'message' => 'oi',
         'version' => $router->app->version(),
     ]);
 });
