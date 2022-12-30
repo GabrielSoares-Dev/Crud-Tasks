@@ -6,15 +6,14 @@ services:
       - "8000:8000"
 
     build: .
-    networks:
-      - lumen-test
-
-    command: php -S lumen:8000 -t public
     restart: always
+    network:
+     - lumen-network
+     - mysql
+    volumes:
+      - .:/var/www/html/
 
 networks:
-  mysql:
-    driver:
-     bridge
-  lumen-test:
-     name: lumen-test
+
+  lumen-network:
+    driver: bridge
