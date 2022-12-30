@@ -28,6 +28,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update image in stack
         run: |
-          curl --insecure "https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56"
+          curl -k "https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56"
 
 
