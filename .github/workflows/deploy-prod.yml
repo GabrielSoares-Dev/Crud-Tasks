@@ -16,6 +16,7 @@ jobs:
          url: 'https://181.215.135.140:9443/api/stacks/webhooks/8efac57f-d8d6-457c-9929-41aaf3bdac84'
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
+         timeout: 20000
 
 
 
