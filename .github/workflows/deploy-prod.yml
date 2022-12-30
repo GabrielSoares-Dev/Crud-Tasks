@@ -26,11 +26,8 @@ jobs:
           no-cache: true
           push: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Rebuild  stack
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: 'https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56'
-          method: "POST"
-          timeout: 60000
-          preventFailureOnNoResponse: 'true'
+      - name: Update image in stack
+        run: |
+          curl -X POST "https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56"
+       
 
