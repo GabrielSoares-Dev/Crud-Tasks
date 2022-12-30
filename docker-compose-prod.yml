@@ -15,7 +15,7 @@ services:
 volumes:
    lumen-test-volume:
     name: lumen-test-volume
-networks:
+# networks:
 
-  lumen-network:
-    driver: bridge
+#   lumen-network:
+#     driver: bridge
