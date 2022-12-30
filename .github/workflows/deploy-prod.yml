@@ -27,7 +27,9 @@ jobs:
           push: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update image in stack
-        run: |
-          curl -k POST "https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56"
+        uses: distributhor/workflow-webhook@v2
+        env:
+         webhook_url: https://181.215.135.140:9443/api/stacks/webhooks/86c6b818-57bc-42bd-bebe-27745d400c56
+         verify_ssl: false
 
 
