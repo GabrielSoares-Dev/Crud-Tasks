@@ -11,8 +11,12 @@ services:
      - lumen-network
      - mysql
     volumes:
-      - .:/var/www/html/
+      - lumen-test-volume:/var/www/html/
 
+
+volumes:
+   lumen-test-volume:
+    name: lumen-test-volume
 networks:
 
   lumen-network:
