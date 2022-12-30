@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:8000"
 
-    build: .
+    image: gabrielsoaresdev/lumen-test:latest
     restart: always
 
 
