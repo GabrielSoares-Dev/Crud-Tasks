@@ -17,6 +17,7 @@ jobs:
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
          timeout: 60000
+         data: '{"key_1": "value_1", "key_2": "value_2"}'
 
 
 
