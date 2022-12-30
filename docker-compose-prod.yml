@@ -10,8 +10,6 @@ services:
     network:
      - lumen-network
      - mysql
-    volumes:
-      - lumen-test-volume:/var/www/html/
 
 
 volumes:
