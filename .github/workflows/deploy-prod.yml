@@ -29,8 +29,8 @@ jobs:
       - name: Rebuild  stack
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://181.215.135.140:9443/api/stacks/webhooks/8efac57f-d8d6-457c-9929-41aaf3bdac84"
+          url: 'https://181.215.135.140:9443/api/stacks/webhooks/2f8bcfc2-4ec5-4ebc-b16d-a369af93f29b'
           method: "POST"
           customHeaders: '{"Content-Type": "application/json"}'
           timeout: 60000
-       
+
