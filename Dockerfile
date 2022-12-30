@@ -13,7 +13,8 @@ RUN composer install
 
 RUN php artisan cache:clear
 
-RUN 
+CMD ["php","-S","lumen:8000","-t","public"]
+
 
 
 
