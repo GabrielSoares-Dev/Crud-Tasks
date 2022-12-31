@@ -15,7 +15,7 @@
 
 $router->get('/', function () use ($router) {
     return response()->json([
-        'message' => 'dmaluco',
+        'message' => 'oi',
         'version' => $router->app->version(),
     ]);
 });
