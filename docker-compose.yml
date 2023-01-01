@@ -17,7 +17,7 @@ services:
 
   mysql:
      container_name: lumen-mysql
-     image: mysql:8.0
+     image: mysql:5.7
      restart: always
      volumes:
        - mysql-local:/var/lib/mysql:rw
