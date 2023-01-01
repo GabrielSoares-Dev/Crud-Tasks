@@ -16,7 +16,7 @@ RUN php artisan cache:clear
 
 
 COPY ./run.sh /tmp
-RUN chmod u+r+x ./run.sh
+RUN chmod u+r+x /tmp/run.sh
 
 
 ENTRYPOINT ["sh", "/tmp/run.sh"]
