@@ -2,12 +2,12 @@ version: '3.5'
 
 services:
   lumen:
-    extra_hosts:
-    - mysql:181.215.135.140
     ports:
       - "8000:8000"
     image: gabrielsoaresdev/lumen-test:latest
     restart: always
+    env_file:
+      - stack.env
 
 
 volumes:
