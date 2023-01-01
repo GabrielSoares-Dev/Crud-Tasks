@@ -16,6 +16,7 @@ RUN php artisan cache:clear
 
 COPY ./run.sh /tmp
 RUN chmod +x /tmp/run.sh
+RUN chmod 775 docker-entrypoint.sh
 ENTRYPOINT ["sh","/tmp/run.sh"]
 
 
