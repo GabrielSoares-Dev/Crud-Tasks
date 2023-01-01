@@ -14,9 +14,9 @@ RUN composer install
 
 RUN php artisan cache:clear
 
-RUN chmod +x run.sh
-RUN cp run.sh /tmp
-ENTRYPOINT ["/tmp/run.sh"]
+COPY ./run.sh /tmp
+
+ENTRYPOINT ["chmod", "+x","/tmp/run.sh"]
 
 
 
