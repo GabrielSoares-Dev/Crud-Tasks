@@ -13,7 +13,8 @@ RUN composer install
 
 RUN php artisan cache:clear
 
-CMD ["php","-S","lumen:8000","-t","public"]
+COPY ./run.sh /tmp
+ENTRYPOINT ["/tmp/run.sh"]
 
 
 
