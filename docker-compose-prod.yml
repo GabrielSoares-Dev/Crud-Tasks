@@ -6,6 +6,9 @@ services:
       - "8000:8000"
     image: gabrielsoaresdev/lumen-test:latest
     restart: always
-    networks:
-      - mysql-network
+    
 
+
+volumes:
+   lumen-test-volume:
+    name: lumen-test-volume
