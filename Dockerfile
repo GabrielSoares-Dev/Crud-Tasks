@@ -1,7 +1,7 @@
 FROM php:7.4-fpm-alpine
 
 RUN chmod +x run.sh
-RUN cp run.sh /tmp
+
 
 RUN docker-php-ext-install pdo_mysql
 
@@ -17,6 +17,7 @@ RUN composer install
 RUN php artisan cache:clear
 
 COPY ./run.sh /tmp
+RUN chmod +x run.sh
 ENTRYPOINT ["/tmp/run.sh"]
 
 
