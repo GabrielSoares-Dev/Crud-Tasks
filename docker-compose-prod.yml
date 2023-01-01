@@ -16,4 +16,5 @@ volumes:
 networks:
   default:
     name: mysql-network
+    external: true
 
