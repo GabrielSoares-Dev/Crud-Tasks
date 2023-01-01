@@ -8,9 +8,12 @@ services:
     restart: always
     env_file:
       - stack.env
-    networks:
-     - mysql-network
+
 
 volumes:
    lumen-test-volume:
     name: lumen-test-volume
+networks:
+  default:
+    name: mysql-network
+    external: true
