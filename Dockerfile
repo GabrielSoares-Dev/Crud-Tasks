@@ -15,8 +15,10 @@ RUN composer install
 RUN php artisan cache:clear
 
 
-RUN cp run.sh /tmp
-RUN chmod +x /tmp/run.sh
+COPY ./run.sh /tmp
+RUN chmod u+r+x ./run.sh
+
+
 ENTRYPOINT ["sh", "/tmp/run.sh"]
 
 
