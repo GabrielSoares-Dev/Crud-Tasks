@@ -6,6 +6,8 @@ services:
       - "8000:8000"
     image: gabrielsoaresdev/lumen-test:latest
     restart: always
+    links:
+      - "mysql"
     env_file:
       - stack.env
 
@@ -13,7 +15,5 @@ services:
 volumes:
    lumen-test-volume:
     name: lumen-test-volume
-networks:
-  default:
-    name: mysql-network
+
 
