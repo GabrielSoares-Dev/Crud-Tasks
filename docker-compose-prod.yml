@@ -2,11 +2,12 @@ version: '3.5'
 
 services:
   lumen:
+    networks:
+      - mysql-network
     ports:
       - "8000:8000"
     image: gabrielsoaresdev/lumen-test:latest
     restart: always
-    
 
 
 volumes:
