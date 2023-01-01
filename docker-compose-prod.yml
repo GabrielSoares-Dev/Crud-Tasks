@@ -1,9 +1,9 @@
-version: '3.1'
+version: '3.5'
 
 services:
   lumen:
-    networks:
-      - mysql-network
+    extra_hosts:
+    - mysql:181.215.135.140
     ports:
       - "8000:8000"
     image: gabrielsoaresdev/lumen-test:latest
