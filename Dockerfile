@@ -1,5 +1,8 @@
 FROM php:7.4-fpm-alpine
 
+RUN chmod +x run.sh
+RUN cp run.sh /tmp
+
 RUN docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www/html/
