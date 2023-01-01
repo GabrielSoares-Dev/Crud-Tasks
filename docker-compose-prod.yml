@@ -10,9 +10,6 @@ services:
       - stack.env
 
 
-volumes:
-   lumen-test-volume:
-    name: lumen-test-volume
 networks:
   default:
     name: mysql-network
