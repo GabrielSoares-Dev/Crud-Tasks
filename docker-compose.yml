@@ -28,7 +28,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
      ports:
      - "3305:3306"
-
      networks:
       - lumen-network
 
