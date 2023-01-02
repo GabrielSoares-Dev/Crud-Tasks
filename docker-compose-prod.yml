@@ -9,24 +9,27 @@ services:
       - stack.env
     ports:
     - "8000:8000"
+    networks:
+      - lumen-base-network
 
 
-  nginx-lumen:
-   image: nginx:alpine
-   container_name: nginx-lumen
-   restart: always
-   depends_on:
-   - lumen
-   ports:
-    - "80:80"
-   volumes:
-    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  # nginx-lumen:
+  #  container_name: nginx-lumen
+  #  image: nginx:1.17.6-alpine
+
+  #  restart: always
+  #  depends_on:
+  #  - lumen
+  #  ports:
+  #   - "80:80"
+  #  volumes:
+  #   - ./nginx/nginx.conf:/etc/nginx/nginx.conf
 
 
 networks:
-  default:
-    name: mysql-network
-    external: true
+ lumen-base-network:
+    name: lumen-base-network
+    driver: bridge
 
 
 
