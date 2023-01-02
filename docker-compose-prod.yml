@@ -7,6 +7,8 @@ services:
     restart: always
     env_file:
       - stack.env
+    ports:
+    - "8000:8000"
 
 
   nginx-lumen:
@@ -25,9 +27,7 @@ networks:
   default:
     name: mysql-network
     external: true
-  proxy-reverse:
-    name: proxy-reverse
-    external: true
+
 
 
 
