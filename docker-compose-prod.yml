@@ -7,9 +7,8 @@ services:
     restart: always
     env_file:
       - stack.env
-    networks:
-      - mysql-network
-  
+
+
   nginx-lumen:
    image: nginx:alpine
    container_name: nginx-lumen
