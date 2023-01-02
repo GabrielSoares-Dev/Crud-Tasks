@@ -1,17 +1,35 @@
 version: '3.5'
 
-services:
-  lumen:
-    ports:
-      - "8000:8000"
-    image: gabrielsoaresdev/lumen-test:latest
-    restart: always
-    env_file:
-      - stack.env
-
-
 networks:
   default:
     name: mysql-network
     external: true
+  proxy-reverse-lumen:
+    driver: bridge
+    name: proxy-reverse-lumen
+services:
+  lumen:
+    image: gabrielsoaresdev/lumen-test:latest
+    restart: always
+    env_file:
+      - stack.env
+    networks:
+      - mysql-network
+      - proxy-reverse-lumen
+  nginx-lumen:
+   image: nginx:alpine
+   container_name: nginx-lumen
+   restart: always
+   depends_on:
+   - lumen
+   ports:
+    - "80:80"
+   volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+   networks:
+      - proxy-reverse-lumen
+
+
+
+
 
