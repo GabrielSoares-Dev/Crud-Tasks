@@ -12,7 +12,6 @@ services:
     - "8000:8000"
     networks:
       - lumen-base-network
-      - proxy-reverse-network
 
 
 
@@ -21,6 +20,7 @@ networks:
  lumen-base-network:
     name: lumen-base-network
     driver: bridge
+
 
 
 
