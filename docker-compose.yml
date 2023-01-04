@@ -9,33 +9,18 @@ services:
     restart: always
     volumes:
       - ".:/var/www/html/"
-
     networks:
      - lumen-network
-    depends_on:
-     - mysql
+     - mysql-network
 
-  mysql:
-     container_name: lumen-mysql
-     image: mysql:5.7
-     restart: always
-     volumes:
-       - mysql-local:/var/lib/mysql:rw
-     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: root
-     ports:
-     - "3305:3306"
-     networks:
-      - lumen-network
 
-volumes:
- mysql-local:
-  name: mysql-local
+
 networks:
   lumen-network:
     driver: bridge
+  mysql-network:
+    name: mysql-network
+    external: true
+
 
 
