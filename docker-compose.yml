@@ -23,7 +23,7 @@ networks:
   api-tasks-network:
    name: api-tasks-network
    driver: bridge
-
+  mysql-network:
    name: mysql-network
    external: true
 
