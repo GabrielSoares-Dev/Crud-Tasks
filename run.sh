@@ -1,7 +1,7 @@
 #!/bin/sh
 
-cd /var/www/html/lumen
+cd /var/www/html/api-tasks
 php artisan migrate --force
-php  -S lumen:8000 -t public
+php  -S api-tasks:8005 -t public
 
 

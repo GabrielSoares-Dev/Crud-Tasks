@@ -12,10 +12,6 @@ services:
     - "8000:8000"
     networks:
       - lumen-base-network
-
-
-
-
 networks:
  lumen-base-network:
     name: lumen-base-network
