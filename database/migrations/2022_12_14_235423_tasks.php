@@ -16,7 +16,8 @@ class Tasks extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->string('description');
+            $table->enum('importance', ['HIGH', 'MEDIUM', 'LOW'])->default('MEDIUM');
             $table->timestamps();
             $table->softDeletes();
         });

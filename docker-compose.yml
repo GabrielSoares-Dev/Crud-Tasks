@@ -14,7 +14,6 @@ services:
     networks:
     - api-tasks-network
     - mysql-network
-    - rabbitmq-network
 volumes:
  vendor-api-tasks:
   name: vendor-api-tasks
