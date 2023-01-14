@@ -13,11 +13,17 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/health', function () use ($router) {
     return response()->json([
-        'message' => 'tasksssssdddd',
-        'version' => $router->app->version(),
+        'statusCode' => 200,
+        'message' => 'Server is Running',
     ]);
 });
+$router->get('/', function () use ($router) {
+    return response()->json('ok', 200);
+});
 
-$router->post('/tasks', 'ExampleController@createTask');
+$router->post('/create', 'TasksController@create');
+$router->get('/read', 'TasksController@get');
+$router->put('/update/{id}', 'TasksController@update');
+$router->delete('/delete/{id}', 'TasksController@delete');

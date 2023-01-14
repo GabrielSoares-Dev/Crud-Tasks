@@ -1,0 +1,212 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api para cadastro de tarefas",
+        "version": "1.0"
+    },
+    "paths": {
+        "/health": {
+            "get": {
+                "tags": [
+                    "Health"
+                ],
+                "description": "Mostra o estado atual da api",
+                "responses": {
+                    "200": {
+                        "description": "Server is Running",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "statusCode": 200,
+                                        "message": "Server is Running"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/create": {
+            "post": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Cria uma tarefa",
+                "operationId": "2d8d483514642cf238292a34ade27d3d",
+                "requestBody": {
+                    "description": "Cria uma tarefa",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "importance"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Estudar"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Estudar matemática"
+                                    },
+                                    "importance": {
+                                        "type": "string",
+                                        "example": "HIGH"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Tarefa criada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "statusCode": 201,
+                                        "message": "Tarefa criada com sucesso"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/read": {
+            "get": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Traz todas as tarefas registradas",
+                "operationId": "9cf8ae681da6621ccc8464a474a5bab1",
+                "responses": {
+                    "200": {
+                        "description": " Tarefas encontradas com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "statusCode": 200,
+                                        "message": "Tarefas encontradas",
+                                        "content": [
+                                            {
+                                                "id": 1,
+                                                "title": "Estudar",
+                                                "description": "Estudar ingles",
+                                                "importance": "HIGH"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update/{id}": {
+            "put": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Atualiza uma tarefa",
+                "operationId": "7016a2d52138eac9af8e68a997cb928c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da tarefa",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "description": "Atualiza uma tarefa",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "importance"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Estudar"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Estudar matemática"
+                                    },
+                                    "importance": {
+                                        "type": "string",
+                                        "example": "HIGH"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Tarefa atualizada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "statusCode": 200,
+                                        "message": "Tarefa atualizada com sucesso"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Deleta uma tarefa",
+                "operationId": "2d865496b090d0f065dd690ecfe5d553",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da tarefa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tarefa deletada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "statusCode": 200,
+                                        "message": "Tarefa deletada com sucesso"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

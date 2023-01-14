@@ -14,7 +14,7 @@ RUN composer install
 
 RUN php artisan cache:clear
 
-
+RUN php artisan swagger-lume:generate
 COPY ./run.sh /tmp
 RUN chmod +x run.sh
 

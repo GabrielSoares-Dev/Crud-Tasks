@@ -2,20 +2,29 @@ version: '3.5'
 
 
 services:
-  lumen:
-    image: gabrielsoaresdev/lumen-test:latest
-    container_name: lumen-base
+  api-tasks:
+    image: gabrielsoaresdev/crudtasklumen:latest
+    container_name: api-tasks
     restart: always
     env_file:
       - stack.env
     ports:
-    - "8000:8000"
+    - "8005:8005"
     networks:
-      - lumen-base-network
+      - api-tasks-network
+      - mysql-network
+      - proxy-reverse-network
 networks:
- lumen-base-network:
-    name: lumen-base-network
+ api-tasks-network:
+    name: api-tasks-network
     driver: bridge
+ mysql-network:
+   name: mysql-network
+   external: true
+ proxy-reverse-network:
+   name: proxy-reverse-network
+   external: true
+
 
 
 

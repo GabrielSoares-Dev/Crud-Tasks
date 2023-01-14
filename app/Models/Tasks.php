@@ -17,5 +17,8 @@ class Tasks extends Model
         'id',
         'title',
         'description',
+        'importance'
     ];
+
+
 }
