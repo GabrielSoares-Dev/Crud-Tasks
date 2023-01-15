@@ -2,7 +2,7 @@ version: '3.5'
 
 
 services:
-  api-tasks:
+  api-tasks-container:
     image: gabrielsoaresdev/crudtasklumen:latest
     container_name: api-tasks
     restart: always
