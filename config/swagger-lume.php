@@ -7,7 +7,7 @@ return [
         | Edit to set the api's title
         |--------------------------------------------------------------------------
          */
-        'title' => 'Swagger Lume API',
+        'title' => 'Api tasks',
     ],
 
     'routes' => [
@@ -16,7 +16,7 @@ return [
         | Route for accessing api documentation interface
         |--------------------------------------------------------------------------
          */
-        'api' => '/api/documentation',
+        'api' => '/',
 
         /*
         |--------------------------------------------------------------------------
