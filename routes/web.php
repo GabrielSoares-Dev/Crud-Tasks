@@ -19,9 +19,6 @@ $router->get('/health', function () use ($router) {
         'message' => 'Server is Running',
     ]);
 });
-$router->get('/', function () use ($router) {
-    return response()->json('ok', 200);
-});
 
 $router->post('/create', 'TasksController@create');
 $router->get('/read', 'TasksController@get');

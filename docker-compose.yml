@@ -9,7 +9,7 @@ services:
      - "8005:8005"
     restart: always
     volumes:
-      - ".:/var/www/html/api-tasks"
+      - .:/var/www/html/api-tasks
       - vendor-api-tasks:/var/www/html/api-tasks/vendor
     networks:
     - api-tasks-network
