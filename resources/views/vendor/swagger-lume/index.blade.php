@@ -81,7 +81,7 @@
             configUrl: {!! isset($additionalConfigUrl) ? '"' . $additionalConfigUrl . '"' : 'null' !!},
             validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
             oauth2RedirectUrl: "{{ route('swagger-lume.oauth2_callback') }}",
-            
+
 
             presets: [
                 SwaggerUIBundle.presets.apis,
