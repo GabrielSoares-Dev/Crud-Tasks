@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{{config('swagger-lume.api.title')}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ swagger_lume_asset('swagger-ui.css') }}" >
@@ -80,6 +81,7 @@
             configUrl: {!! isset($additionalConfigUrl) ? '"' . $additionalConfigUrl . '"' : 'null' !!},
             validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
             oauth2RedirectUrl: "{{ route('swagger-lume.oauth2_callback') }}",
+            
 
             presets: [
                 SwaggerUIBundle.presets.apis,
