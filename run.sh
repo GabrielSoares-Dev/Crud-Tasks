@@ -2,6 +2,6 @@
 
 cd /var/www/html/api-tasks
 php artisan migrate --force
-php  -S api-tasks-container:8005 public/index.php
+php  -S crud-tasks:8005 public/index.php
 
 

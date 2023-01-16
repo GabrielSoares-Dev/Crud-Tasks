@@ -2,8 +2,8 @@ version: '3.5'
 
 
 services:
-  api-tasks-container:
-    container_name: api-tasks-container
+  crud-tasks:
+    container_name: crud-tasks
     build: .
     ports:
      - "8005:8005"
