@@ -2,8 +2,8 @@ version: '3.5'
 
 
 services:
-  api-tasks:
-    container_name: api-tasks
+  api-tasks-container:
+    container_name: api-tasks-container
     build: .
     ports:
      - "8005:8005"
