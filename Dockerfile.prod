@@ -18,10 +18,10 @@ RUN composer install --optimize-autoloader --no-dev
 
 RUN php artisan cache:clear
 
-RUN chown -R www-data:www-data /var/www/storage/logs
-RUN chmod -R 770 /var/www/storage/logs
-RUN chown -R www-data:www-data /var/www/storage/framework/views
-RUN chmod -R 770 /var/www/storage/framework/views
+RUN chown -R www-data:www-data /var/www/api-tasks/storage/logs
+RUN chmod -R 770 /var/www/api-tasks/storage/logs
+RUN chown -R www-data:www-data /var/www/api-tasks/storage/framework/views
+RUN chmod -R 770 /var/www/api-tasks/storage/framework/views
 COPY ./run-prod.sh /tmp
 RUN chmod +x run-prod.sh
 
