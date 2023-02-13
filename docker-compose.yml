@@ -1,35 +1,26 @@
 version: '3.5'
 
-
 services:
   crud-tasks:
     container_name: crud-tasks
-    build: .
     ports:
      - "8005:8005"
+    build: .
     restart: always
     volumes:
-      - .:/var/www/html/api-tasks
-      - vendor-api-tasks:/var/www/html/api-tasks/vendor
+      - ".:/var/www/html/api-tasks"
+      - volume-vendor-crud-tasks:/var/www/html/
     networks:
-    - api-tasks-network
-    - mysql-network
+     - crud-tasks-network
+     - mysql-network
+
 volumes:
- vendor-api-tasks:
-  name: vendor-api-tasks
+  volume-vendor-crud-tasks:
+   name: volume-vendor-crud-tasks
 
 networks:
-  api-tasks-network:
-   name: api-tasks-network
-   driver: bridge
+  crud-tasks-network:
+    driver: bridge
   mysql-network:
-   name: mysql-network
-   external: true
-
-
-
-
-
-
-
-
+    name: mysql-network
+    external: true

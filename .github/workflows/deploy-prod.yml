@@ -20,7 +20,7 @@ jobs:
         with:
           # Contexto onde está o arquivo Dockerfile, normalmente é .
           context: .
-          file: Dockerfile
+          file: Dockerfile.prod
           # Qual a tag
           tags: gabrielsoaresdev/crudtasklumen:latest
           no-cache: true
