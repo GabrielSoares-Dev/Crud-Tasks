@@ -1,0 +1,32 @@
+FROM php:7.4-fpm-alpine
+
+RUN apk update  && apk add  \
+    git \
+    libzip-dev \
+    zip \
+    unzip
+
+RUN docker-php-ext-install pdo_mysql zip
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /var/www/api-tasks
+
+COPY . /var/www/api-tasks
+
+RUN composer install --optimize-autoloader --no-dev
+
+RUN php artisan cache:clear
+
+RUN chown -R www-data:www-data /var/www/storage/logs
+RUN chmod -R 770 /var/www/storage/logs
+RUN chown -R www-data:www-data /var/www/storage/framework/views
+RUN chmod -R 770 /var/www/storage/framework/views
+COPY ./run-prod.sh /tmp
+RUN chmod +x run-prod.sh
+
+
+ENTRYPOINT ["sh", "/tmp/run-prod.sh"]
+
+
+
