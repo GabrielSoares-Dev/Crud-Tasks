@@ -2,6 +2,17 @@ version: '3.5'
 
 
 services:
+
+  nginx-crud-tasks:
+    image: nginx:alpine
+    container_name: nginx-crud-tasks
+    ports:
+      - 85:85
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./public:/var/www/api-tasks/public
+    networks:
+      - api-tasks-network
   crud-tasks:
     image: gabrielsoaresdev/crudtasklumen:latest
     container_name:  crud-tasks
@@ -15,16 +26,7 @@ services:
       - mysql-network
       - proxy-reverse-network
 
-  nginx-crud-tasks:
-    image: nginx:alpine
-    container_name: nginx-crud-tasks
-    ports:
-      - 85:85
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./public:/var/www/api-tasks/public
-    networks:
-      - api-tasks-network
+
 
 networks:
  api-tasks-network:
