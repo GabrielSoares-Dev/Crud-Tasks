@@ -19,7 +19,7 @@ services:
     ports:
       - 85:85
     volumes:
-      - ./nginx/nginx.conf/:/etc/nginx/conf.d/default.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./public:/var/www/api-tasks/public
     depends_on:
       - crud-tasks
