@@ -11,7 +11,6 @@ services:
     ports:
     - "8005:8005"
     networks:
-      - api-tasks-network
       - mysql-network
       - proxy-reverse-network
     depends_on:
@@ -27,9 +26,6 @@ services:
     depends_on:
       - crud-tasks
 networks:
- api-tasks-network:
-    name: api-tasks-network
-    driver: bridge
  mysql-network:
    name: mysql-network
    external: true
