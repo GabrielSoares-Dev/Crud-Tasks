@@ -17,7 +17,7 @@ services:
 
   nginx-crud-tasks:
     image: nginx:alpine
-    container_name: crud-tasks
+    container_name: nginx-crud-tasks
     ports:
       - 85:85
     volumes:
