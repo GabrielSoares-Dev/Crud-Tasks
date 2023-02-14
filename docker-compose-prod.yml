@@ -14,8 +14,11 @@ services:
       - api-tasks-network
       - mysql-network
       - proxy-reverse-network
-  nginx:
+    depends_on:
+      - nginx-crud-tasks
+  nginx-crud-tasks:
     image: nginx:alpine
+    container_name: crud-tasks
     ports:
       - 85:85
     volumes:
