@@ -8,9 +8,9 @@ services:
     container_name: nginx-crud-tasks
     ports:
       - 85:85
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./public:/var/www/api-tasks/public
+    # volumes:
+    #   - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    #   - ./public:/var/www/api-tasks/public
     networks:
       - api-tasks-network
   crud-tasks:
