@@ -5,7 +5,7 @@ RUN apk update  && apk add  \
     libzip-dev \
     zip \
     unzip
-COPY ./php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
+COPY ./deploy.conf/php-fpm/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 RUN docker-php-ext-install pdo_mysql zip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
