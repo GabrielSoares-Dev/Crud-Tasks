@@ -1,24 +1,12 @@
-# Lumen PHP Framework
+# CRUD de Tasks com Docker e Laravel Lumen
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+Este é um repositório que contém um projeto de CRUD (Create, Read, Update, Delete) de tasks utilizando o framework Laravel Lumen e o Docker para aprender o processo de deploy em um ambiente de produção.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Sobre o Projeto
 
-## Official Documentation
+O objetivo deste projeto é criar um sistema básico de gerenciamento de tarefas, permitindo que os usuários realizem operações CRUD em tarefas, como criar uma nova tarefa, ler os detalhes de uma tarefa existente, atualizar os dados de uma tarefa e excluir uma tarefa.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+O projeto utiliza o framework PHP Lumen, que é uma versão mais leve e rápida do Laravel, focado na criação de APIs e aplicações web mais simples. O Lumen oferece uma estrutura sólida para o desenvolvimento de aplicações web eficientes e escaláveis.
 
-## Contributing
+Além disso, o Docker é utilizado para facilitar o processo de deploy em um ambiente de produção. O Docker permite empacotar o aplicativo e suas dependências em contêineres isolados, garantindo a portabilidade e a consistência do ambiente de execução.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
